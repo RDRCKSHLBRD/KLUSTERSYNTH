@@ -1,5 +1,5 @@
 //
-//  MainView.swift  .swift
+//  MainView.swift
 //  KLUSTERSYNTH
 //
 //  Created by Roderick Shoolbraid on 2025-02-04.
@@ -10,7 +10,10 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var audioManager = AudioManager()
     @StateObject private var oscillator = Oscillator()
-    
+    @StateObject private var filter = Filter()        // ✅ Persist filter state
+    @StateObject private var envelope = Envelope()    // ✅ Persist envelope state
+    @StateObject private var delay = Delay()          // ✅ Persist delay state
+
     var body: some View {
         VStack(spacing: 20) {
             // Top bar with master controls
@@ -51,19 +54,9 @@ struct MainView: View {
                 VStack(spacing: 20) {
                     // Module Views
                     OscillatorView(oscillator: oscillator)
-                    
-                    // Placeholder views for other modules
-                    Text("Filter Module - Coming Soon")
-                        .frame(maxWidth: .infinity, minHeight: 100)
-                        .background(Color.gray.opacity(0.2))
-                    
-                    Text("Envelope Module - Coming Soon")
-                        .frame(maxWidth: .infinity, minHeight: 100)
-                        .background(Color.gray.opacity(0.2))
-                    
-                    Text("Delay Module - Coming Soon")
-                        .frame(maxWidth: .infinity, minHeight: 100)
-                        .background(Color.gray.opacity(0.2))
+                    FilterView(filter: filter)         // ✅ Uses @StateObject
+                    EnvelopeView(envelope: envelope)   // ✅ Uses @StateObject
+                    DelayView(delay: delay)           // ✅ Uses @StateObject
                 }
                 .padding()
             }
@@ -71,6 +64,8 @@ struct MainView: View {
         .onAppear {
             // Setup initial audio routing
             audioManager.attachNode(oscillator.getAudioNode())
+            audioManager.attachNode(filter.getAudioNode())   // ✅ Attach filter
+            audioManager.attachNode(delay.getAudioNode())    // ✅ Attach delay
         }
     }
 }

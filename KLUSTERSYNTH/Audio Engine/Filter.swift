@@ -134,6 +134,14 @@ class Filter: ObservableObject {
         return output / a0
     }
     
+    func setEnvelopeModulation(_ value: Float) {
+        // Ensure envelope modulation doesn't exceed reasonable limits
+        let modulatedValue = max(0, min(value, 1.0))
+        cutoff += modulatedValue * KLUSTERSYNTH.FilterParameters.modDepthRange.defaultValue
+    }
+
+    
+    
     func getAudioNode() -> AVAudioNode {
         return filterNode
     }

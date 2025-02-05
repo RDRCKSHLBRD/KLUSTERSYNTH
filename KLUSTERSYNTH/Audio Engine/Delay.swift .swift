@@ -10,7 +10,7 @@ import AVFoundation
 
 class Delay: ObservableObject {
     private var delayNode: AVAudioNode!
-    private var sampleRate: Double = 44100.0
+    private var sampleRate: Float = 44100.0  // 🔧 Changed from Double to Float
     private var delayBuffer: [Float] = []
     private var writeIndex: Int = 0
     
@@ -39,7 +39,7 @@ class Delay: ObservableObject {
     // LFO Parameters
     @Published var lfoAmount: Float = KLUSTERSYNTH.LFOParameters.depthRange.defaultValue
     @Published var lfoType: Int = 0        // 0: Sine, 1: Triangle, 2: Pulse
-    private var phase: Double = 0.0
+    private var phase: Float = 0.0  // 🔧 Changed from Double to Float
     
     init() {
         initializeDelayBuffer()
@@ -47,12 +47,12 @@ class Delay: ObservableObject {
     }
     
     private func initializeDelayBuffer() {
-        let maxDelay = Int(KLUSTERSYNTH.DelayParameters.timeRange.max * Double(sampleRate))
+        let maxDelay = Int(KLUSTERSYNTH.DelayParameters.timeRange.max * sampleRate)
         delayBuffer = Array(repeating: 0.0, count: maxDelay)
     }
     
     private func updateDelayBuffer() {
-        let newSize = Int(time * Float(sampleRate))
+        let newSize = Int(time * sampleRate)  // 🔧 sampleRate is now Float
         if newSize > delayBuffer.count {
             delayBuffer.append(contentsOf: Array(repeating: 0.0, count: newSize - delayBuffer.count))
         }
@@ -84,7 +84,7 @@ class Delay: ObservableObject {
         let modifiedTime = calculateModulatedTime(lfoValue)
         
         // Read from delay buffer
-        let readIndex = (writeIndex - Int(modifiedTime * Float(sampleRate)) + delayBuffer.count) % delayBuffer.count
+        let readIndex = (writeIndex - Int(modifiedTime * sampleRate) + delayBuffer.count) % delayBuffer.count  // 🔧 sampleRate is now Float
         let delayedSample = delayBuffer[readIndex]
         
         // Calculate new sample with feedback
@@ -101,17 +101,17 @@ class Delay: ObservableObject {
     private func generateLFO() -> Float {
         // Advance LFO phase
         let lfoFreq = timeRateF + timeRateC
-        phase += 1.0 / sampleRate * Double(lfoFreq)
+        phase += 1.0 / sampleRate * lfoFreq  // 🔧 sampleRate is now Float
         if phase >= 1.0 { phase -= 1.0 }
         
         // Generate LFO waveform
         switch lfoType {
         case 0: // Sine
-            return sin(2.0 * Float.pi * Float(phase))
+            return sin(2.0 * Float.pi * phase)
         case 1: // Triangle
-            return 2.0 * abs(2.0 * Float(phase) - 1.0) - 1.0
+            return 2.0 * abs(2.0 * phase - 1.0) - 1.0
         case 2: // Pulse
-            return Float(phase) < 0.5 ? 1.0 : -1.0
+            return phase < 0.5 ? 1.0 : -1.0
         default:
             return 0.0
         }

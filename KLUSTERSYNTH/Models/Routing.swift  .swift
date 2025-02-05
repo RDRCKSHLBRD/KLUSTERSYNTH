@@ -64,13 +64,19 @@ class Routing: ObservableObject {
         updateEnvelopeRouting()
     }
     
+    
+    
     // Routing Updates
     private func updateOscillatorRouting() {
         guard let engine = audioEngine else { return }
         
         // Clear existing connections
-        engine.disconnectNodeOutput(oscillator1?.getAudioNode())
-        engine.disconnectNodeOutput(oscillator2?.getAudioNode())
+        if let osc1Node = oscillator1?.getAudioNode() {
+            engine.disconnectNodeOutput(osc1Node)
+        }
+        if let osc2Node = oscillator2?.getAudioNode() {
+            engine.disconnectNodeOutput(osc2Node)
+        }
         
         // Establish new connections based on routing state
         if routingState["osc1ToFilter1"] == true {
@@ -86,8 +92,12 @@ class Routing: ObservableObject {
         guard let engine = audioEngine else { return }
         
         // Clear existing connections
-        engine.disconnectNodeOutput(filter1?.getAudioNode())
-        engine.disconnectNodeOutput(filter2?.getAudioNode())
+        if let filter1Node = filter1?.getAudioNode() {
+            engine.disconnectNodeOutput(filter1Node)
+        }
+        if let filter2Node = filter2?.getAudioNode() {
+            engine.disconnectNodeOutput(filter2Node)
+        }
         
         // Establish new connections based on routing state
         if routingState["filter1ToDelay1"] == true {
@@ -103,28 +113,36 @@ class Routing: ObservableObject {
         guard let engine = audioEngine else { return }
         
         // Clear existing connections
-        engine.disconnectNodeOutput(delay1?.getAudioNode())
-        engine.disconnectNodeOutput(delay2?.getAudioNode())
+        if let delay1Node = delay1?.getAudioNode() {
+            engine.disconnectNodeOutput(delay1Node)
+        }
+        if let delay2Node = delay2?.getAudioNode() {
+            engine.disconnectNodeOutput(delay2Node)
+        }
         
         // Connect to main mixer if enabled
         if routingState["delayToMixer"] == true {
-            connectNodes(from: delay1?.getAudioNode(), to: engine.mainMixerNode)
-            connectNodes(from: delay2?.getAudioNode(), to: engine.mainMixerNode)
+            if let delay1Node = delay1?.getAudioNode() {
+                connectNodes(from: delay1Node, to: engine.mainMixerNode)
+            }
+            if let delay2Node = delay2?.getAudioNode() {
+                connectNodes(from: delay2Node, to: engine.mainMixerNode)
+            }
         }
     }
     
     private func updateEnvelopeRouting() {
         // Update envelope modulation routing
-        if routingState["env1ToFilter1"] == true {
-            filter1?.setEnvelopeModulation(envelope1?.getValue() ?? 0)
+        if routingState["env1ToFilter1"] == true, let env1Value = envelope1?.getValue() {
+            filter1?.setEnvelopeModulation(env1Value)
         }
         
-        if routingState["env1ToOsc2"] == true {
-            oscillator2?.setBaseAmplitude(envelope1?.getValue() ?? 0)
+        if routingState["env1ToOsc2"] == true, let env1Value = envelope1?.getValue() {
+            oscillator2?.setBaseAmplitude(env1Value)
         }
         
-        if routingState["env2ToFilter2"] == true {
-            filter2?.setEnvelopeModulation(envelope2?.getValue() ?? 0)
+        if routingState["env2ToFilter2"] == true, let env2Value = envelope2?.getValue() {
+            filter2?.setEnvelopeModulation(env2Value)
         }
     }
     
