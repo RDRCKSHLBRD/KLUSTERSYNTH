@@ -11,6 +11,21 @@
 		5C1722782D52C1A6003CA8F2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722772D52C1A6003CA8F2 /* ContentView.swift */; };
 		5C17227A2D52C1A7003CA8F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C1722792D52C1A7003CA8F2 /* Assets.xcassets */; };
 		5C17227D2D52C1A7003CA8F2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C17227C2D52C1A7003CA8F2 /* Preview Assets.xcassets */; };
+		5C1722862D52C2C0003CA8F2 /* AudioKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5C1722852D52C2C0003CA8F2 /* AudioKit */; };
+		5C17228C2D52C393003CA8F2 /* Oscillator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17228B2D52C393003CA8F2 /* Oscillator.swift */; };
+		5C17228E2D52C3A8003CA8F2 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17228D2D52C3A8003CA8F2 /* Filter.swift */; };
+		5C1722902D52C3B7003CA8F2 /* Delay.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17228F2D52C3B7003CA8F2 /* Delay.swift .swift */; };
+		5C1722922D52C3C8003CA8F2 /* Envelope.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722912D52C3C8003CA8F2 /* Envelope.swift .swift */; };
+		5C1722942D52C3D7003CA8F2 /* AudioManager.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722932D52C3D7003CA8F2 /* AudioManager.swift  .swift */; };
+		5C1722962D52C3EF003CA8F2 /* ModuleSettings.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722952D52C3EF003CA8F2 /* ModuleSettings.swift .swift */; };
+		5C1722982D52C3FB003CA8F2 /* Routing.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722972D52C3FB003CA8F2 /* Routing.swift  .swift */; };
+		5C17229A2D52C415003CA8F2 /* OscillatorView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722992D52C415003CA8F2 /* OscillatorView.swift .swift */; };
+		5C17229C2D52C424003CA8F2 /* FilterView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17229B2D52C424003CA8F2 /* FilterView.swift .swift */; };
+		5C17229E2D52C432003CA8F2 /* DelayView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17229D2D52C432003CA8F2 /* DelayView.swift .swift */; };
+		5C1722A02D52C444003CA8F2 /* EnvelopeView.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C17229F2D52C444003CA8F2 /* EnvelopeView.swift .swift */; };
+		5C1722A22D52C452003CA8F2 /* MainView.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722A12D52C452003CA8F2 /* MainView.swift  .swift */; };
+		5C1722A42D52C463003CA8F2 /* MIDIManager.swift .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722A32D52C463003CA8F2 /* MIDIManager.swift .swift */; };
+		5C1722A62D52C470003CA8F2 /* Parameters.swift  .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C1722A52D52C470003CA8F2 /* Parameters.swift  .swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +35,20 @@
 		5C1722792D52C1A7003CA8F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C17227C2D52C1A7003CA8F2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C17227E2D52C1A7003CA8F2 /* KLUSTERSYNTH.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KLUSTERSYNTH.entitlements; sourceTree = "<group>"; };
+		5C17228B2D52C393003CA8F2 /* Oscillator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oscillator.swift; sourceTree = "<group>"; };
+		5C17228D2D52C3A8003CA8F2 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		5C17228F2D52C3B7003CA8F2 /* Delay.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Delay.swift .swift"; sourceTree = "<group>"; };
+		5C1722912D52C3C8003CA8F2 /* Envelope.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Envelope.swift .swift"; sourceTree = "<group>"; };
+		5C1722932D52C3D7003CA8F2 /* AudioManager.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioManager.swift  .swift"; sourceTree = "<group>"; };
+		5C1722952D52C3EF003CA8F2 /* ModuleSettings.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModuleSettings.swift .swift"; sourceTree = "<group>"; };
+		5C1722972D52C3FB003CA8F2 /* Routing.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Routing.swift  .swift"; sourceTree = "<group>"; };
+		5C1722992D52C415003CA8F2 /* OscillatorView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OscillatorView.swift .swift"; sourceTree = "<group>"; };
+		5C17229B2D52C424003CA8F2 /* FilterView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilterView.swift .swift"; sourceTree = "<group>"; };
+		5C17229D2D52C432003CA8F2 /* DelayView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DelayView.swift .swift"; sourceTree = "<group>"; };
+		5C17229F2D52C444003CA8F2 /* EnvelopeView.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EnvelopeView.swift .swift"; sourceTree = "<group>"; };
+		5C1722A12D52C452003CA8F2 /* MainView.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainView.swift  .swift"; sourceTree = "<group>"; };
+		5C1722A32D52C463003CA8F2 /* MIDIManager.swift .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MIDIManager.swift .swift"; sourceTree = "<group>"; };
+		5C1722A52D52C470003CA8F2 /* Parameters.swift  .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parameters.swift  .swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1722862D52C2C0003CA8F2 /* AudioKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +86,10 @@
 				5C1722772D52C1A6003CA8F2 /* ContentView.swift */,
 				5C1722792D52C1A7003CA8F2 /* Assets.xcassets */,
 				5C17227E2D52C1A7003CA8F2 /* KLUSTERSYNTH.entitlements */,
+				5C17228A2D52C365003CA8F2 /* Utilities */,
+				5C1722892D52C350003CA8F2 /* Views */,
+				5C1722882D52C347003CA8F2 /* Models */,
+				5C1722872D52C331003CA8F2 /* Audio Engine */,
 				5C17227B2D52C1A7003CA8F2 /* Preview Content */,
 			);
 			path = KLUSTERSYNTH;
@@ -67,6 +101,48 @@
 				5C17227C2D52C1A7003CA8F2 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5C1722872D52C331003CA8F2 /* Audio Engine */ = {
+			isa = PBXGroup;
+			children = (
+				5C17228B2D52C393003CA8F2 /* Oscillator.swift */,
+				5C17228D2D52C3A8003CA8F2 /* Filter.swift */,
+				5C17228F2D52C3B7003CA8F2 /* Delay.swift .swift */,
+				5C1722912D52C3C8003CA8F2 /* Envelope.swift .swift */,
+				5C1722932D52C3D7003CA8F2 /* AudioManager.swift  .swift */,
+			);
+			path = "Audio Engine";
+			sourceTree = "<group>";
+		};
+		5C1722882D52C347003CA8F2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5C1722952D52C3EF003CA8F2 /* ModuleSettings.swift .swift */,
+				5C1722972D52C3FB003CA8F2 /* Routing.swift  .swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5C1722892D52C350003CA8F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5C1722992D52C415003CA8F2 /* OscillatorView.swift .swift */,
+				5C17229B2D52C424003CA8F2 /* FilterView.swift .swift */,
+				5C17229D2D52C432003CA8F2 /* DelayView.swift .swift */,
+				5C17229F2D52C444003CA8F2 /* EnvelopeView.swift .swift */,
+				5C1722A12D52C452003CA8F2 /* MainView.swift  .swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5C17228A2D52C365003CA8F2 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5C1722A32D52C463003CA8F2 /* MIDIManager.swift .swift */,
+				5C1722A52D52C470003CA8F2 /* Parameters.swift  .swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +161,9 @@
 			dependencies = (
 			);
 			name = KLUSTERSYNTH;
+			packageProductDependencies = (
+				5C1722852D52C2C0003CA8F2 /* AudioKit */,
+			);
 			productName = KLUSTERSYNTH;
 			productReference = 5C1722722D52C1A6003CA8F2 /* KLUSTERSYNTH.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +192,9 @@
 				Base,
 			);
 			mainGroup = 5C1722692D52C1A6003CA8F2;
+			packageReferences = (
+				5C1722842D52C2C0003CA8F2 /* XCRemoteSwiftPackageReference "AudioKit" */,
+			);
 			productRefGroup = 5C1722732D52C1A6003CA8F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,8 +221,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C1722A42D52C463003CA8F2 /* MIDIManager.swift .swift in Sources */,
+				5C1722962D52C3EF003CA8F2 /* ModuleSettings.swift .swift in Sources */,
+				5C1722A62D52C470003CA8F2 /* Parameters.swift  .swift in Sources */,
+				5C1722982D52C3FB003CA8F2 /* Routing.swift  .swift in Sources */,
+				5C1722A02D52C444003CA8F2 /* EnvelopeView.swift .swift in Sources */,
+				5C17229A2D52C415003CA8F2 /* OscillatorView.swift .swift in Sources */,
+				5C1722A22D52C452003CA8F2 /* MainView.swift  .swift in Sources */,
+				5C17228C2D52C393003CA8F2 /* Oscillator.swift in Sources */,
+				5C17228E2D52C3A8003CA8F2 /* Filter.swift in Sources */,
 				5C1722782D52C1A6003CA8F2 /* ContentView.swift in Sources */,
+				5C17229E2D52C432003CA8F2 /* DelayView.swift .swift in Sources */,
+				5C1722902D52C3B7003CA8F2 /* Delay.swift .swift in Sources */,
+				5C1722942D52C3D7003CA8F2 /* AudioManager.swift  .swift in Sources */,
+				5C17229C2D52C424003CA8F2 /* FilterView.swift .swift in Sources */,
 				5C1722762D52C1A6003CA8F2 /* KLUSTERSYNTHApp.swift in Sources */,
+				5C1722922D52C3C8003CA8F2 /* Envelope.swift .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +433,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5C1722842D52C2C0003CA8F2 /* XCRemoteSwiftPackageReference "AudioKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AudioKit/AudioKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.6.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5C1722852D52C2C0003CA8F2 /* AudioKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5C1722842D52C2C0003CA8F2 /* XCRemoteSwiftPackageReference "AudioKit" */;
+			productName = AudioKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5C17226A2D52C1A6003CA8F2 /* Project object */;
 }
